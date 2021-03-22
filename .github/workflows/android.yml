@@ -2,7 +2,7 @@
 name: CD
 
 on:
-  pull_request:
+  push_request:
     branches: [ main ]
 
 jobs:
