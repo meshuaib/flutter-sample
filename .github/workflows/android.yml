@@ -25,4 +25,5 @@ jobs:
     - name: Build with Gradle
       run: |
       cd android
-      run: ./gradlew build
+      ls -la
+      sh./gradlew build
