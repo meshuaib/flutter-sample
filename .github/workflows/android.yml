@@ -23,7 +23,4 @@ jobs:
         chmod +x gradlew
         ls -la
     - name: Build with Gradle
-      run: |
-      cd android
-      ls -la
-      sh./gradlew build
+      run: ./gradlew build
