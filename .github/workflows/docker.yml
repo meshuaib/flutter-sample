@@ -15,7 +15,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+          $DOCKER_PASSWORD: $${{ secrets.DOCKER_PASSWORD }}
+      - name: docker login
+        run: |
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
       # Runs a single command using the runners shell
       - name: Docker Build FlutterCI
-        run: docker build . -t fluterci
+        run: docker build . -t meshuaib/fluterci
